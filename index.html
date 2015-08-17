@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- Viewport for mobile devices -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+
+
+    <!-- Website description and Keywords -->
+    <META NAME="description" CONTENT="Boa Sorte é um Webapp que te ajuda a jogar na Mega-sena!" />
+    <META NAME="keywords" CONTENT="boa sorte, boa, sorte, mega sena, mega, sena, numeros, aleatorios, jogo, jogar, mobile, celular" />
+
+    <!-- Color for Android Chorme Header Material Design -->
+    <meta name="theme-color" content="#00913d">
+
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:title" content="Boa Sorte!" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Boa Sorte é um Webapp que te ajuda a jogar na Mega-sena!" />
+    <meta property="og:site_name" content="http://www..com" />
+    <meta property="og:image" content="http://www..com/favicon-196x196.png" />
+
+
+    <title>Boa Sorte!</title>
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="css/animate.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <!-- JS -->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- Icons (for favicon and mobile links -->
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png">
+
+    <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+
+
+    <!-- Efeitos Animate ao clicar no botão e cálculo de número aleatório -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#reload").click(function() {
+                $('#num_boasorte').removeClass().addClass('circulo animated flipInY').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                    $(this).removeClass('animated flipInY');
+                });
+                $('#reload').removeClass().addClass('circulo invert animated rotateIn').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                    $(this).removeClass('animated rotateIn');
+                });
+
+                //$('#num_boasorte').addClass('animated flipInY');
+                $("#num_boasorte").html(Math.floor(Math.random() * 60 + 1));
+            });
+        });
+    </script>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-md-6 col-md-offset-7 col-xs-20">
+            <div class="col-md-20">
+                <h1><i class="fa fa-thumbs-o-up"></i> Boa Sorte!</h1>
+            </div>
+            <div class="col-md-20">
+                <p class="circulo" id="num_boasorte"></p>
+            </div>
+            <div class="col-md-20">
+                <p class="circulo invert" id="reload"><i class="fa fa-refresh"></i>
+                </p>
+            </div>
+
+            <div class="texto">
+                <p>Clique no botão acima para sortear um novo número aleatório.
+                    <br />Adicione este webapp em sua tela de início em seu navegador.</p>
+                <p>Esta aplicação sorteia números de 1 a 60,
+                    <br />preferencialmente para você jogar na Mega-sena.</p>
+            </div>
+
+            <div class="col-md-20 col-xs-10">
+                <a class="btn" href=""><i class="fa fa-github"></i> Projeto</a>
+            </div>
+            <div class="col-md-20 col-xs-10">
+                <a class="btn" href="https://www.google.com.br/#q=mega+sena" target="new"><i class="fa fa-google"></i> Resultados</a>
+            </div>
+            <div class="col-md-20">
+                <p>Desenvolvido por
+                    <br /><a class="creditos" href="http://www.celsomartins.com" target="new">CELSOMARTINS.COM</a>
+                </p>
+            </div>
+
+            <!-- Cálculo de número aleatório ao carregar a página -->
+            <script>
+                (function printMsg() {
+                    var node = document.getElementById("num_boasorte");
+                    node.innerHTML = Math.floor(Math.random() * 60 + 1);
+                })();
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>

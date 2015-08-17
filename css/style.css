@@ -1,0 +1,66 @@
+body {
+    font-family: font-family: 'Roboto', sans-serif;
+    color: #00913d;
+    text-align: center;
+}
+h1 {
+    font-size: 3em
+}
+p.circulo {
+    border: 5px solid #00913d;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+    font-size: 7em;
+    color: #00913d;
+    margin: 20px auto;
+    display: block;
+    z-index: 10;
+    position: relative;
+    border-radius: 50%;
+    font-family: font-family: 'Roboto', sans-serif;
+}
+.invert {
+    background: #00913d;
+}
+.invert i {
+    color: #fff
+}
+.creditos {
+    text-decoration: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    color: #00913d;
+    font-size: 1em
+}
+a.btn {
+    text-decoration: none;
+    background: #00913d;
+    color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 10px 0;
+    font-size: 1.2em;
+    display: block;
+    font-family: font-family: 'Roboto', sans-serif;
+}
+a.btn:link,
+a.btn:visited,
+a.btn:hover,
+a.btn:active {
+    color: #fff;
+    text-decoration: none
+}
+.texto {
+    width: 100%;
+    margin: 0;
+}
+.container {
+    margin: 0;
+    padding: 0;
+    margin: auto;
+}
+.texto > p {
+    font-size: .8em;
+}
