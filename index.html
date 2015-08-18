@@ -55,18 +55,24 @@
 
     <!-- Efeitos Animate ao clicar no botão e cálculo de número aleatório -->
     <script type="text/javascript">
+    	var animationEndEvents ='webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        var liberadoNovoClick = true;
         $(document).ready(function() {
             $("#reload").click(function() {
-                $('#num_boasorte').removeClass().addClass('circulo animated flipInY').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+            	if(!liberadoNovoClick) return;
+            	liberadoNovoClick = false;
+                $('#num_boasorte').removeClass('animated flipInY').addClass('animated flipInY')
+                .one(animationEndEvents, function() {
                     $(this).removeClass('animated flipInY');
                 });
-                $('#reload').removeClass().addClass('circulo invert animated rotateIn').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                $('#reload').removeClass('animated rotateIn').addClass('animated rotateIn')
+                .one(animationEndEvents, function() {
                     $(this).removeClass('animated rotateIn');
+                    liberadoNovoClick = true;
                 });
-
-                //$('#num_boasorte').addClass('animated flipInY');
                 $("#num_boasorte").html(Math.floor(Math.random() * 60 + 1));
             });
+            $("#reload").trigger('click');
         });
     </script>
 
@@ -105,14 +111,6 @@
                     <br /><a class="creditos" href="http://www.celsomartins.com" target="new">CELSOMARTINS.COM</a>
                 </p>
             </div>
-
-            <!-- Cálculo de número aleatório ao carregar a página -->
-            <script>
-                (function printMsg() {
-                    var node = document.getElementById("num_boasorte");
-                    node.innerHTML = Math.floor(Math.random() * 60 + 1);
-                })();
-            </script>
         </div>
     </div>
 </body>
